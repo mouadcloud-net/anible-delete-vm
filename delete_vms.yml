@@ -1,0 +1,29 @@
+---
+- name: Delete VMs from ESXi
+  hosts: localhost
+  gather_facts: false
+  vars:
+    esxi_hostname: "10.192.0.171"
+    esxi_username: "root"
+    esxi_password: "CCnn123"
+    validate_certs: false
+
+  tasks:
+    - name: Delete VM esxi-1
+      community.vmware.vmware_guest:
+        hostname: "{{ esxi_hostname }}"
+        username: "{{ esxi_username }}"
+        password: "{{ esxi_password }}"
+        validate_certs: "{{ validate_certs }}"
+        name: "esxi-1"
+        state: "absent"
+
+    - name: Delete VM esxi-2
+      community.vmware.vmware_guest:
+        hostname: "{{ esxi_hostname }}"
+        username: "{{ esxi_username }}"
+        password: "{{ esxi_password }}"
+        validate_certs: "{{ validate_certs }}"
+        name: "esxi-2"
+        state: "absent"
+
