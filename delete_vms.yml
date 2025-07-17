@@ -3,9 +3,9 @@
   hosts: localhost
   gather_facts: false
   vars:
-    esxi_hostname: "10.192.0.171"
-    esxi_username: "root"
-    esxi_password: "CCnn123"
+    esxi_hostname: "{{ lookup('env', 'ESXI_HOSTNAME') }}"
+    esxi_username: "{{ lookup('env', 'ESXI_USERNAME') }}"
+    esxi_password: "{{ lookup('env', 'ESXI_PASSWORD') }}"
     validate_certs: false
 
   tasks:
@@ -26,4 +26,3 @@
         validate_certs: "{{ validate_certs }}"
         name: "esxi-2"
         state: "absent"
-
