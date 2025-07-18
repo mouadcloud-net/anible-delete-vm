@@ -15,7 +15,7 @@
         username: "{{ esxi_username }}"
         password: "{{ esxi_password }}"
         validate_certs: "{{ validate_certs }}"
-        name: "esxi-1"
+        name: "vCLS-4c4c4544-004d-4810-8042-b1c04f463032"
         state: "absent"
 
     - name: Delete VM esxi-2
@@ -24,5 +24,5 @@
         username: "{{ esxi_username }}"
         password: "{{ esxi_password }}"
         validate_certs: "{{ validate_certs }}"
-        name: "esxi-2"
+        name: "node1"
         state: "absent"
