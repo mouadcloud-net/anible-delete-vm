@@ -18,11 +18,3 @@
         name: "vCLS-4c4c4544-004d-4810-8042-b1c04f463032"
         state: "absent"
 
-    - name: Delete VM esxi-2
-      community.vmware.vmware_guest:
-        hostname: "{{ esxi_hostname }}"
-        username: "{{ esxi_username }}"
-        password: "{{ esxi_password }}"
-        validate_certs: "{{ validate_certs }}"
-        name: "node1"
-        state: "absent"
