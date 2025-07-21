@@ -8,6 +8,10 @@
     esxi_password: "{{ lookup('env', 'ESXI_PASSWORD') }}"
     validate_certs: false
 
+  # Force Ansible to use the correct Python interpreter
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+
   tasks:
     - name: Delete VM esxi-1
       community.vmware.vmware_guest:
@@ -17,4 +21,3 @@
         validate_certs: "{{ validate_certs }}"
         name: "vCLS-4c4c4544-004d-4810-8042-b1c04f463032"
         state: "absent"
-
